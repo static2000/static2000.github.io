@@ -1548,7 +1548,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #241137;
+  background: #e4ff0a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2425,4 +2425,47 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.menu .menu-item a:hover {
+  background: #85d2c5;
+}
+.sidebar-toggle {
+  background: #3a8a7b;
+}
+.back-to-top {
+  background: #3a8a7b;
+}
+.sidebar {
+  box-shadow: none;
+  background-image: url("/uploads/background.jpg");
+}
+.site-author-image {
+  border: 2px solid #bcdcd7;
+  border-radius: 100px;
+}
+.theme-next #ds-thread #ds-reset .ds-replybox .ds-avatar,
+.theme-next #ds-reset .ds-avatar img {
+  border-radius: 26px;
+  border: 1px solid #d7efeb;
+  padding: 1px;
+}
+.site-author-name {
+  color: #e2fafc;
+  color: #3a8a7b;
+}
+.site-description {
+  color: #3a8a7b;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+  color: #3a8a7b;
+}
+.sidebar-nav .sidebar-nav-active {
+  color: #3a8a7b;
+  border-bottom-color: #3a8a7b;
+}
+.post-toc ol a {
+  color: #000;
+}
+.post-toc ol a:hover {
+  color: #3a8a7b;
 }
