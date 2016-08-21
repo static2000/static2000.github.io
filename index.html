@@ -266,8 +266,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/12/My-New-Post/" itemprop="url">
-                  My New Post
+                <a class="post-title-link" href="/2016/08/12/设计模式：Constructor（构造器）模式/" itemprop="url">
+                  设计模式：Constructor（构造器）模式
                 </a>
               
             
@@ -286,13 +286,32 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/12/My-New-Post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/My-New-Post/" itemprop="commentsCount"></span>
+                <a href="/2016/08/12/设计模式：Constructor（构造器）模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/设计模式：Constructor（构造器）模式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -317,7 +336,32 @@
       
         
           
-            <h2 id="HELLO-TEST"><a href="#HELLO-TEST" class="headerlink" title="HELLO TEST"></a>HELLO TEST</h2><h3 id="THIS-IS-MY-BLOG"><a href="#THIS-IS-MY-BLOG" class="headerlink" title="THIS IS MY BLOG"></a>THIS IS MY BLOG</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ console.log(<span class="string">'hello ting'</span>)</div></pre></td></tr></table></figure>
+            <p>Constructor: 在内存已分配给该对象的情况下，用于初始化新创建对象的特殊方法。</p>
+<h3 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h3><h5 id="创建一个对象："><a href="#创建一个对象：" class="headerlink" title="创建一个对象："></a>创建一个对象：</h5><ol>
+<li><p>字面量形式：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var newObject = &#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>new:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var newObject = new Object()</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="将键值赋给一个对象"><a href="#将键值赋给一个对象" class="headerlink" title="将键值赋给一个对象:"></a>将键值赋给一个对象:</h5><ol>
+<li><p>点运算符：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = &#123;b: 1&#125;;</div><div class="line">a.b = 2;</div><div class="line">console.log(a.b) // 2</div></pre></td></tr></table></figure>
+</li>
+<li><p>中括号：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = &#123;b: 1&#125;;</div><div class="line">a[&apos;b&apos;] = 2;</div><div class="line">console.log(a[&apos;b&apos;]) // 2</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object.defineProperty：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = &#123;&#125;;</div><div class="line">Object.defineProperty(a, &apos;key&apos;, &#123;</div><div class="line">  enumerable: false,</div><div class="line">  configurable: false,</div><div class="line">  writable: true,</div><div class="line">  value: &apos;static&apos;</div><div class="line">&#125;);</div><div class="line">console.log(a.key) // static</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object.defineProperties：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var a = &#123;&#125;;</div><div class="line">Object.defineProperties(a, &#123;</div><div class="line">  &quot;property1&quot;: &#123;</div><div class="line">    value: true,</div><div class="line">    writable: true</div><div class="line">  &#125;,</div><div class="line">  &quot;property2&quot;: &#123;</div><div class="line">    value: &quot;Hello&quot;,</div><div class="line">    writable: false</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">console.log(a. property1) // true</div><div class="line">console.log(a. property2) // false</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="基本Constructor"><a href="#基本Constructor" class="headerlink" title="基本Constructor"></a>基本Constructor</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Car(owner, id)&#123;</div><div class="line">    this.owner = owner;</div><div class="line">    this.id = id;</div><div class="line">    this.toString = function()&#123;</div><div class="line">        return &apos;This is &apos; + this.owner + &apos;\&apos;s car, id is&apos; + this.id;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var myCar = new Car(&apos;shuting&apos;, 12334);</div><div class="line">myCar.toString() // &quot;This is ting&apos;s car, id is12&quot;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="带原型的Constructor"><a href="#带原型的Constructor" class="headerlink" title="带原型的Constructor"></a>带原型的Constructor</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Car(owner, id)&#123;</div><div class="line">    this.owner = owner;</div><div class="line">    this.id = id;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Car.prototype.toString = function()&#123;</div><div class="line">    return &apos;This is &apos; + this.owner + &apos;\&apos;s car, id is&apos; + this.id;</div><div class="line">&#125;</div><div class="line">var myCar = new Car(&apos;shuting&apos;, 12334);</div><div class="line">myCar.toString() // &quot;This is ting&apos;s car, id is12&quot;</div></pre></td></tr></table></figure>
+
           
         
       
@@ -366,8 +410,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/12/helloWord/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2016/08/12/git常用命令整理/" itemprop="url">
+                  git常用命令整理
                 </a>
               
             
@@ -410,8 +454,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/12/helloWord/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/helloWord/" itemprop="commentsCount"></span>
+                <a href="/2016/08/12/git常用命令整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/git常用命令整理/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -436,15 +480,23 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h3 id="重命名本地分支："><a href="#重命名本地分支：" class="headerlink" title="重命名本地分支："></a>重命名本地分支：</h3><p>重命名本地分支其实就是先删除远端分支，然后再重命名本地分支，再重新提交一个远程分支</p>
+<ol>
+<li><p>删除远程分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push --delete origin target</div></pre></td></tr></table></figure>
+</li>
+<li><p>重命名本地分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git -m target targetNew</div></pre></td></tr></table></figure>
+</li>
+<li><p>推送本地分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin targetNew</div></pre></td></tr></table></figure>
+</li>
+<li><p>(与远程分支建立关联)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch --set-upstream targetNew origin/targetNew</div></pre></td></tr></table></figure>
+<p> 可以在第二步的时候就建立与远端分支的联系：用</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -u origin targetNew</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
           
         
@@ -531,7 +583,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
