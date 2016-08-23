@@ -102,16 +102,19 @@
 
 
 
-<meta name="description" content="###Observer：    目标和观察者是基类，目标提供一个维护观察者列表的方法，观察者提供一个更新方法。    具体目标和具体观察者分别继承各自的基类，然后具体观察者把自己注册到具体目标里，在具体目标发生变化时候会调用观察者列表里具体观察者的更新方法。">
+<meta name="description" content="Observer：目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
+具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别">
 <meta property="og:url" content="http://yoursite.com/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/index.html">
 <meta property="og:site_name" content="书婷的小记">
-<meta property="og:description" content="###Observer：    目标和观察者是基类，目标提供一个维护观察者列表的方法，观察者提供一个更新方法。    具体目标和具体观察者分别继承各自的基类，然后具体观察者把自己注册到具体目标里，在具体目标发生变化时候会调用观察者列表里具体观察者的更新方法。">
-<meta property="og:updated_time" content="2016-08-22T15:14:52.000Z">
+<meta property="og:description" content="Observer：目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
+具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。">
+<meta property="og:updated_time" content="2016-08-23T02:05:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别">
-<meta name="twitter:description" content="###Observer：    目标和观察者是基类，目标提供一个维护观察者列表的方法，观察者提供一个更新方法。    具体目标和具体观察者分别继承各自的基类，然后具体观察者把自己注册到具体目标里，在具体目标发生变化时候会调用观察者列表里具体观察者的更新方法。">
+<meta name="twitter:description" content="Observer：目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
+具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。">
 
 
 
@@ -311,10 +314,13 @@
       
 
       
-        <p>###Observer：<br>    目标和观察者是基类，<code>目标</code>提供一个<code>维护观察者</code>列表的方法，观察者提供一个<code>更新方法</code>。<br>    具体目标和具体观察者分别继承各自的基类，然后<code>具体观察者</code>把自己<code>注册</code>到具体目标里，在<code>具体目标</code>发生变化时候会<code>调用</code>观察者列表里具体观察者的更新方法。</p>
-<a id="more"></a>
-<p>###Publish/Subscribe(发布/订阅)模式：<br>    Publish/Subscribe模式提供了一个<code>主题/事件</code>通道，这个通道介于订阅者和发布者之间，类似于一个调度中心。<br>    订阅者把自己想订阅的事件注册到调度中心（包含处理函数），当该事件触发时候，发布者发布该事件到调度中心（顺带上下文），由调度中心统一调度订阅者注册到调度中心的处理代码。发布者和订阅者没有直接联系，相互解耦。<br>    通过订阅一个对象的特定任务或活动，当任务/活动发生时获得通知，而不是单个对象直接调用其他对象的方法，促进松散耦合。</p>
-
+        <h3 id="Observer："><a href="#Observer：" class="headerlink" title="Observer："></a>Observer：</h3><pre><code>目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
+具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。
+</code></pre><a id="more"></a>
+<h3 id="Publish-Subscribe-发布-订阅-模式："><a href="#Publish-Subscribe-发布-订阅-模式：" class="headerlink" title="Publish/Subscribe(发布/订阅)模式："></a>Publish/Subscribe(发布/订阅)模式：</h3><pre><code>Publish/Subscribe模式提供了一个`主题/事件`通道，这个通道介于订阅者和发布者之间，类似于一个调度中心。
+订阅者把自己想订阅的事件注册到调度中心（包含处理函数），当该事件触发时候，发布者发布该事件到调度中心（顺带上下文），由调度中心统一调度订阅者注册到调度中心的处理代码。发布者和订阅者没有直接联系，相互解耦。
+通过订阅一个对象的特定任务或活动，当任务/活动发生时获得通知，而不是单个对象直接调用其他对象的方法，促进松散耦合。
+</code></pre>
       
     </div>
 
@@ -492,7 +498,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Observer："><span class="nav-number">1.</span> <span class="nav-text">Observer：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Publish-Subscribe-发布-订阅-模式："><span class="nav-number">2.</span> <span class="nav-text">Publish/Subscribe(发布/订阅)模式：</span></a></li></ol></div>
             
           </div>
         </section>
