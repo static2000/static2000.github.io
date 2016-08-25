@@ -266,6 +266,258 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/25/今朝云舒/" itemprop="url">
+                  今朝云舒天蓝
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-25T14:58:45+08:00" content="2016-08-25">
+              2016-08-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/25/今朝云舒/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/25/今朝云舒/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>晨起，急着梳洗出门。与往日同，顺势抬头看看今日气候如何，湖蓝的天空映衬着舒卷悠闲的丝丝云羽，顿时思乡心切，这样的晨空在家乡我已望过千千万万遍，<br>而今在异地他乡，相似的景总是会牵扯出内心的恋恋不舍，父母在，然而又如何不远游。望安好。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/24/编码技巧/" itemprop="url">
+                  编码技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T11:46:36+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/编码技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/编码技巧/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>避免使用<code>typeof bar == &#39;object&#39;</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">typeof &#123;&#125;; // &quot;object&quot;</div><div class="line">typeof []; // &quot;object&quot;</div><div class="line">typeof null; // &quot;object&quot;</div><div class="line"></div><div class="line">改为：Object.prototype.toString.call(obj) == &apos;[object Object]&apos;判断</div><div class="line">Object.prototype.toString.call(&#123;&#125;); // &quot;[object Object]&quot;</div><div class="line">Object.prototype.toString.call([]); // &quot;[object Array]&quot;</div><div class="line">Object.prototype.toString.call(null); // &quot;[object Null]&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* 消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;</div><div class="line">* 消除代码运行的一些不安全之处，保证代码运行的安全；</div><div class="line">* 提高编译器效率，增加运行速度；</div><div class="line">* 为未来新版本的Javascript做好铺垫。</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>reverse()</code> 会改变数组本身，并返回原数组的引用。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var arr1 = &quot;john&quot;.split(&apos;&apos;); j o h n</div><div class="line">var arr2 = arr1.reverse(); n h o j</div><div class="line">var arr3 = &quot;jones&quot;.split(&apos;&apos;); j o n e s</div><div class="line">arr2.push(arr3); </div><div class="line">console.log(&quot;array 1: length=&quot; + arr1.length + &quot; last=&quot; + arr1.slice(-1)); // array 1: length=5 last=j,o,n,e,s</div><div class="line">console.log(&quot;array 2: length=&quot; + arr2.length + &quot; last=&quot; + arr2.slice(-1)); // array 2: length=5 last=j,o,n,e,s</div></pre></td></tr></table></figure>
+</li>
+<li><p>转化</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var a=&#123;&#125;,</div><div class="line">b=&#123;key:&apos;b&apos;&#125;,</div><div class="line">c=&#123;key:&apos;c&apos;&#125;;</div><div class="line"></div><div class="line">a[b]=123;</div><div class="line">a[c]=456;</div><div class="line"></div><div class="line">console.log(a[b]); // 456</div><div class="line"></div><div class="line">// 设置对象属性时，js将隐式转换参数值， b 和 c 都被转化为[object Object], 成为了a[&quot;[object Object]&quot;]</div></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/22/设计模式：Publish-Subscribe-发布-订阅-模式/" itemprop="url">
                   设计模式：Publish/Subscribe(发布/订阅)模式
                 </a>
@@ -285,6 +537,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -396,6 +667,25 @@ $(obj).off(&apos;channel&apos;);
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -1122,7 +1412,7 @@ $(obj).off(&apos;channel&apos;);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1130,7 +1420,7 @@ $(obj).off(&apos;channel&apos;);
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1139,7 +1429,7 @@ $(obj).off(&apos;channel&apos;);
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
