@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="Observer：目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
-具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。">
+<meta name="description" content="Prototype模式是基于原型继承的模式，可以在其中创建对象，作为其他对象的原型。prototype对象本身实际上是用作构造函数创建每个对象的蓝图。
+简单实现1234567891011121314151617181920var vehiclePrototype = &amp;#123;    init: function(carModel)&amp;#123;        this.model = carMo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别">
-<meta property="og:url" content="http://yoursite.com/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/index.html">
+<meta property="og:title" content="设计模式：Prototype(原型)模式 ">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/设计模式：Prototype-原型-模式/index.html">
 <meta property="og:site_name" content="书婷的小记">
-<meta property="og:description" content="Observer：目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
-具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。">
-<meta property="og:updated_time" content="2016-08-23T02:11:11.000Z">
+<meta property="og:description" content="Prototype模式是基于原型继承的模式，可以在其中创建对象，作为其他对象的原型。prototype对象本身实际上是用作构造函数创建每个对象的蓝图。
+简单实现1234567891011121314151617181920var vehiclePrototype = &amp;#123;    init: function(carModel)&amp;#123;        this.model = carMo">
+<meta property="og:updated_time" content="2016-08-28T13:39:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别">
-<meta name="twitter:description" content="Observer：目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
-具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。">
+<meta name="twitter:title" content="设计模式：Prototype(原型)模式 ">
+<meta name="twitter:description" content="Prototype模式是基于原型继承的模式，可以在其中创建对象，作为其他对象的原型。prototype对象本身实际上是用作构造函数创建每个对象的蓝图。
+简单实现1234567891011121314151617181920var vehiclePrototype = &amp;#123;    init: function(carModel)&amp;#123;        this.model = carMo">
 
 
 
@@ -135,9 +135,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/28/设计模式：Prototype-原型-模式/"/>
 
-  <title> Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别 | 书婷的小记 </title>
+  <title> 设计模式：Prototype(原型)模式  | 书婷的小记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +267,7 @@
             
             
               
-                Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别
+                设计模式：Prototype(原型)模式 
               
             
           </h1>
@@ -279,8 +279,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-22T23:01:19+08:00" content="2016-08-22">
-              2016-08-22
+            <time itemprop="dateCreated" datetime="2016-08-28T16:39:35+08:00" content="2016-08-28">
+              2016-08-28
             </time>
           </span>
 
@@ -309,8 +309,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/" itemprop="commentsCount"></span>
+                <a href="/2016/08/28/设计模式：Prototype-原型-模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/设计模式：Prototype-原型-模式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,13 +333,9 @@
       
 
       
-        <h3 id="Observer："><a href="#Observer：" class="headerlink" title="Observer："></a>Observer：</h3><pre><code>目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
-具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。
-</code></pre><a id="more"></a>
-<h3 id="Publish-Subscribe-发布-订阅-模式："><a href="#Publish-Subscribe-发布-订阅-模式：" class="headerlink" title="Publish/Subscribe(发布/订阅)模式："></a>Publish/Subscribe(发布/订阅)模式：</h3><pre><code>Publish/Subscribe模式提供了一个`主题/事件`通道，这个通道介于订阅者和发布者之间，类似于一个调度中心。
-订阅者把自己想订阅的事件注册到调度中心（包含处理函数），当该事件触发时候，发布者发布该事件到调度中心（顺带上下文），由调度中心统一调度订阅者注册到调度中心的处理代码。发布者和订阅者没有直接联系，相互解耦。
-通过订阅一个对象的特定任务或活动，当任务/活动发生时获得通知，而不是单个对象直接调用其他对象的方法，促进松散耦合。
-</code></pre>
+        <p>Prototype模式是基于原型继承的模式，可以在其中创建对象，作为其他对象的原型。prototype对象本身实际上是用作构造函数创建每个对象的蓝图。</p>
+<h3 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var vehiclePrototype = &#123;</div><div class="line">    init: function(carModel)&#123;</div><div class="line">        this.model = carModel;</div><div class="line">    &#125;,</div><div class="line">    getModel: function()&#123;</div><div class="line">        console.log(&apos;the model of this vehicle is..&apos;+ this.model);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function vehicle(model)&#123;</div><div class="line">    function F()&#123;&#125;;</div><div class="line">    F.prototype = vehiclePrototype;</div><div class="line"></div><div class="line">    var f = new F();</div><div class="line">    f.init(model);</div><div class="line">    return f;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var car = vehicle(&apos;ford escort&apos;);</div><div class="line">car.getModel();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var beget = (function()&#123;</div><div class="line">    function F()&#123;&#125;</div><div class="line">    return function (proto)&#123;</div><div class="line">        F.prototype = proto;</div><div class="line">        return new F();</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -370,16 +366,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/22/Lodash/" rel="next" title="git常用命令整理">
-                <i class="fa fa-chevron-left"></i> git常用命令整理
+              <a href="/2016/08/28/设计模式：Mediator-中介者-模式/" rel="next" title="设计模式：Mediator(中介者)模式">
+                <i class="fa fa-chevron-left"></i> 设计模式：Mediator(中介者)模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/22/设计模式：Publish-Subscribe-发布-订阅-模式/" rel="prev" title="设计模式：Publish/Subscribe(发布/订阅)模式">
-                设计模式：Publish/Subscribe(发布/订阅)模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/28/设计模式：Command（命令）模式/" rel="prev" title="设计模式：Command（命令）模式 ">
+                设计模式：Command（命令）模式  <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -395,10 +391,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/"
-     data-title="Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别"
+        <div class="ds-share flat" data-thread-key="2016/08/28/设计模式：Prototype-原型-模式/"
+     data-title="设计模式：Prototype(原型)模式 "
      data-content=""
-     data-url="http://yoursite.com/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/">
+     data-url="http://yoursite.com/2016/08/28/设计模式：Prototype-原型-模式/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -425,8 +421,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/"
-           data-title="Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别" data-url="http://yoursite.com/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/">
+      <div class="ds-thread" data-thread-key="2016/08/28/设计模式：Prototype-原型-模式/"
+           data-title="设计模式：Prototype(原型)模式 " data-url="http://yoursite.com/2016/08/28/设计模式：Prototype-原型-模式/">
       </div>
     
   </div>
@@ -517,7 +513,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Observer："><span class="nav-number">1.</span> <span class="nav-text">Observer：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Publish-Subscribe-发布-订阅-模式："><span class="nav-number">2.</span> <span class="nav-text">Publish/Subscribe(发布/订阅)模式：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单实现"><span class="nav-number">1.</span> <span class="nav-text">简单实现</span></a></li></ol></div>
             
           </div>
         </section>
