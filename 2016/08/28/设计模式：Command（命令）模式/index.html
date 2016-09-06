@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。此外，这种模式将调用操作的对象和知道如何实现该操作的对象解耦，并在交换出具体类（对象）方面提供更大的整体灵活性。">
+<meta name="description" content="行为型设计模式Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。此外，这种模式将调用操作的对象和知道如何实现该操作的对象解耦，并在交换出具体类（对象）方面提供更大的整体灵活性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式：Command（命令）模式 ">
 <meta property="og:url" content="http://yoursite.com/2016/08/28/设计模式：Command（命令）模式/index.html">
 <meta property="og:site_name" content="书婷的小记">
-<meta property="og:description" content="Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。此外，这种模式将调用操作的对象和知道如何实现该操作的对象解耦，并在交换出具体类（对象）方面提供更大的整体灵活性。">
-<meta property="og:updated_time" content="2016-08-28T14:40:30.000Z">
+<meta property="og:description" content="行为型设计模式Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。此外，这种模式将调用操作的对象和知道如何实现该操作的对象解耦，并在交换出具体类（对象）方面提供更大的整体灵活性。">
+<meta property="og:updated_time" content="2016-08-30T02:37:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式：Command（命令）模式 ">
-<meta name="twitter:description" content="Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。此外，这种模式将调用操作的对象和知道如何实现该操作的对象解耦，并在交换出具体类（对象）方面提供更大的整体灵活性。">
+<meta name="twitter:description" content="行为型设计模式Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。此外，这种模式将调用操作的对象和知道如何实现该操作的对象解耦，并在交换出具体类（对象）方面提供更大的整体灵活性。">
 
 
 
@@ -330,7 +330,7 @@
       
 
       
-        <p>Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。<br>此外，这种模式<code>将调用操作的对象和知道如何实现该操作的对象解耦</code>，并在交换出具体类（对象）方面提供更大的整体灵活性。<br><a id="more"></a><br>Command模式背后的主要思想是：它为我们提供了一种分离职责的手段，这些职责包括从执行命令的任意地方发布命令以及将该职责转而委托给不同对象。</p>
+        <h4 id="行为型设计模式"><a href="#行为型设计模式" class="headerlink" title="行为型设计模式"></a>行为型设计模式</h4><p>Command: 将方法调用、请求或操作封装到单一对象中，从而根据我们不同的请求对客户进行参数化和传递可供执行的方法调用。<br>此外，这种模式<code>将调用操作的对象和知道如何实现该操作的对象解耦</code>，并在交换出具体类（对象）方面提供更大的整体灵活性。<br><a id="more"></a><br>Command模式背后的主要思想是：它为我们提供了一种分离职责的手段，这些职责包括从执行命令的任意地方发布命令以及将该职责转而委托给不同对象。</p>
 <h3 id="Command-创建一个简单的汽车购买服务。"><a href="#Command-创建一个简单的汽车购买服务。" class="headerlink" title="Command,创建一个简单的汽车购买服务。"></a>Command,创建一个简单的汽车购买服务。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">    var CarManager = &#123;</div><div class="line">        // 请求信息</div><div class="line">        requestInfo: function(model, id)&#123;</div><div class="line">            ……</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        // 订购汽车</div><div class="line">        bugVehicle: function(model, id)&#123;</div><div class="line">            ……</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        // 组织一个view</div><div class="line">        arrangeViewing: function(model, id)&#123;</div><div class="line">            ……</div><div class="line">        &#125;</div><div class="line">    &#125; </div><div class="line">&#125;)();</div><div class="line">上面的代码，可以通过直接访问对象轻松调用CarManager方法，然而，它在有些情况下可能是不利的。</div><div class="line"></div><div class="line">例如：如果CarManager里的核心Api改变了会怎么样。这将要求程序里所有直接访问这些方法的对象都需要进行修改。这可能被视为一个耦合层，它实际上最大程度的违反了松耦合对象OOP方法了。</div><div class="line"></div><div class="line">这是我们希望能够实现的内容：</div><div class="line">CarManager.execute(&apos;bugVehicle&apos;, &quot;FordEscort&quot;, &quot;454545&quot;);</div><div class="line"></div><div class="line">按照这个结构，我们现在为CarManager.execute方法添加一个定义，如下所示：</div><div class="line">CarManager.execute = function(name)&#123;</div><div class="line">    return CarManager[name] &amp;&amp; CarManager[name].apply(Carmanager, Array.slice.call(arguments, 1););</div><div class="line">&#125;</div><div class="line"></div><div class="line">最终实例调用看起来是这样的：</div><div class="line">CarManager.execute(&apos;arrangeViewing&apos;, &apos;Ferrari&apos;, &apos;121212&apos;);</div><div class="line">CarManager.execute(&apos;requestInfo&apos;, &apos;Ferrari&apos;, &apos;121212&apos;);</div><div class="line">CarManager.execute(&apos;bugVehicle&apos;, &apos;Ferrari&apos;, &apos;121212&apos;);</div></pre></td></tr></table></figure>
 
       
@@ -464,7 +464,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -510,7 +510,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-创建一个简单的汽车购买服务。"><span class="nav-number">1.</span> <span class="nav-text">Command,创建一个简单的汽车购买服务。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#行为型设计模式"><span class="nav-number">1.</span> <span class="nav-text">行为型设计模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-创建一个简单的汽车购买服务。"><span class="nav-number"></span> <span class="nav-text">Command,创建一个简单的汽车购买服务。</span></a></div>
             
           </div>
         </section>

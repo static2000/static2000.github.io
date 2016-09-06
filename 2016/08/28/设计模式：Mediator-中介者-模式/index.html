@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。Mediator本质上是Observer模式的共享目标。">
+<meta name="description" content="行为型设计模式Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。Mediator本质上是Observer模式的共享目标。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式：Mediator(中介者)模式">
 <meta property="og:url" content="http://yoursite.com/2016/08/28/设计模式：Mediator-中介者-模式/index.html">
 <meta property="og:site_name" content="书婷的小记">
-<meta property="og:description" content="Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。Mediator本质上是Observer模式的共享目标。">
-<meta property="og:updated_time" content="2016-08-28T08:37:16.000Z">
+<meta property="og:description" content="行为型设计模式Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。Mediator本质上是Observer模式的共享目标。">
+<meta property="og:updated_time" content="2016-08-30T02:37:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式：Mediator(中介者)模式">
-<meta name="twitter:description" content="Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。Mediator本质上是Observer模式的共享目标。">
+<meta name="twitter:description" content="行为型设计模式Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。Mediator本质上是Observer模式的共享目标。">
 
 
 
@@ -330,7 +330,7 @@
       
 
       
-        <p>Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。<br>Mediator本质上是Observer模式的共享目标。<br><a id="more"></a></p>
+        <h4 id="行为型设计模式"><a href="#行为型设计模式" class="headerlink" title="行为型设计模式"></a>行为型设计模式</h4><p>Mediator: 通过公开一个统一接口，系统的不同部分可以通过该接口进行通信。中介者模式促进松散耦合的方式是：确保组件的交互是通过中心点来处理，而不是显示的引用彼此，这样可以解耦系统，提高组件和重用性。<br>Mediator本质上是Observer模式的共享目标。<br><a id="more"></a></p>
 <h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">var mediator = (function()&#123;</div><div class="line">// 存储可被广播或监听的topic</div><div class="line">var topics = &#123;&#125;;</div><div class="line"></div><div class="line">// 订阅一个topic,提供一个回调函数， 一旦topic被广播就执行该回调</div><div class="line">var subscribe = function(topic, fu)&#123;</div><div class="line">    if(!topics[t0pic])&#123;</div><div class="line">        topics[topic] = [];</div><div class="line">    &#125;</div><div class="line">    topics[topic].push(&#123;context: this, callback: fn&#125;);</div><div class="line">    return this;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 发布/广播事件到程序的剩余部分</div><div class="line">var publish = function(topic)&#123;</div><div class="line">    var args;</div><div class="line">    if(!topcis[topic])&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    args = Array.prototype.slice.call(arguments, 1);</div><div class="line">    for(var i = 0, l = topics[topic].length; i &lt; l; i++)&#123;</div><div class="line">        var subscription = topics[topic][i];</div><div class="line">        subscription.callback.apply(subscription.context, args);</div><div class="line">    &#125;</div><div class="line">    return this;</div><div class="line">&#125;</div><div class="line"></div><div class="line">return &#123;</div><div class="line">    Publish: publish,</div><div class="line">    Subscribe: subscribe,</div><div class="line">    installTo: function(obj)&#123;</div><div class="line">        obj.subscribe = subscribe;</div><div class="line">        obj.publish = publish;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
 <h3 id="中介者（Mediator）与观察者（Observer）模式"><a href="#中介者（Mediator）与观察者（Observer）模式" class="headerlink" title="中介者（Mediator）与观察者（Observer）模式"></a>中介者（Mediator）与观察者（Observer）模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在Observer模式中，不存在封装约束的单一对象，Observer和Subject必须合作才能维持约束。Observer模式创建观察者对象，观察者对象向订阅他们的对象发布其感兴趣的事件。</div><div class="line">Mediator模式则通过限制对象严格通过Mediator进行通信来实现松耦合。</div></pre></td></tr></table></figure>
 <h3 id="中介者（Mediator）与外观（Facade）"><a href="#中介者（Mediator）与外观（Facade）" class="headerlink" title="中介者（Mediator）与外观（Facade）"></a>中介者（Mediator）与外观（Facade）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Mediator模式在它被模块显示引用的地方汇集这些模块之间的通信。从某种意义上说，这是多方向的。另一方面，Facade模式仅是为模块或系统定义了一个较简单的接口，没有添加额外的功能。系统中其他模块不会直接关联外观，所以可以被视作单向的。</div></pre></td></tr></table></figure>
@@ -466,7 +466,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -512,7 +512,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本实现"><span class="nav-number">1.</span> <span class="nav-text">基本实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中介者（Mediator）与观察者（Observer）模式"><span class="nav-number">2.</span> <span class="nav-text">中介者（Mediator）与观察者（Observer）模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中介者（Mediator）与外观（Facade）"><span class="nav-number">3.</span> <span class="nav-text">中介者（Mediator）与外观（Facade）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#行为型设计模式"><span class="nav-number">1.</span> <span class="nav-text">行为型设计模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本实现"><span class="nav-number"></span> <span class="nav-text">基本实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中介者（Mediator）与观察者（Observer）模式"><span class="nav-number"></span> <span class="nav-text">中介者（Mediator）与观察者（Observer）模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中介者（Mediator）与外观（Facade）"><span class="nav-number"></span> <span class="nav-text">中介者（Mediator）与外观（Facade）</span></a></div>
             
           </div>
         </section>

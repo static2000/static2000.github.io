@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Facade模式为更大的代码提供了一个方便的高层次接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。">
+<meta name="description" content="结构型设计模式Facade模式提供了一个方便的高层次接口，用来访问子系统中的一群接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。每当使用jQuery的$(el).css()或$(el).animate()方法时，实际上我们是在使用Facade:一种更简单的共有接口，使我们不必手动在jQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式：Facade（外观）模式">
 <meta property="og:url" content="http://yoursite.com/2016/08/28/设计模式：Facade（外观）模式/index.html">
 <meta property="og:site_name" content="书婷的小记">
-<meta property="og:description" content="Facade模式为更大的代码提供了一个方便的高层次接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。">
-<meta property="og:updated_time" content="2016-08-28T15:54:31.000Z">
+<meta property="og:description" content="结构型设计模式Facade模式提供了一个方便的高层次接口，用来访问子系统中的一群接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。每当使用jQuery的$(el).css()或$(el).animate()方法时，实际上我们是在使用Facade:一种更简单的共有接口，使我们不必手动在jQ">
+<meta property="og:updated_time" content="2016-09-05T13:59:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式：Facade（外观）模式">
-<meta name="twitter:description" content="Facade模式为更大的代码提供了一个方便的高层次接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。">
+<meta name="twitter:description" content="结构型设计模式Facade模式提供了一个方便的高层次接口，用来访问子系统中的一群接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。每当使用jQuery的$(el).css()或$(el).animate()方法时，实际上我们是在使用Facade:一种更简单的共有接口，使我们不必手动在jQ">
 
 
 
@@ -330,7 +330,17 @@
       
 
       
-        <p>Facade模式为更大的代码提供了一个方便的<code>高层次</code>接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。<br>Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。</p>
+        <h4 id="结构型设计模式"><a href="#结构型设计模式" class="headerlink" title="结构型设计模式"></a>结构型设计模式</h4><p>Facade模式提供了一个方便的<code>高层次</code>接口，用来访问子系统中的一群接口，能够隐藏其底层的真实复杂性。Facade是一种结构型模式。<br>Facade模式既能简化类的接口，也能将这个类从使用它的代码中解耦。这使我们能够间接与子系统交互。<br><code>每当使用jQuery的$(el).css()或$(el).animate()方法时，实际上我们是在使用Facade:一种更简单的共有接口，使我们不必手动在jQuery核心中调用很多内部方法以便实现某些行为。</code><br><a id="more"></a></p>
+<h4 id="Facade参考"><a href="#Facade参考" class="headerlink" title="Facade参考"></a>Facade<a href="http://www.cnblogs.com/god_bless_you/archive/2010/06/08/1753652.html" target="_blank" rel="external">参考</a></h4><p>Facade：Client调用Facade的方法，Facade知晓子系统的功能和职责，它将Client的请求委派到子系统中。<br>SubSystem：</p>
+<pre><code>1. 实现子系统的功能。
+2. 子系统可以由Façade调用，也可以由Client直接调用。
+3. 子系统不知道Façade的存在，对于子系统，Façade只是一个Client。
+</code></pre><p>适用性：</p>
+<pre><code>1. 为一个复杂子系统提供一个简单接口。
+2. 减少子系统之间以及子系统与客户端的依赖性，提高子系统的独立性和可移植性。
+3. 在层次化结构中，可以使用Facade模式定义系统中每一层的入口。简化各层之间的依赖。
+</code></pre><h4 id="Facade并非必须单独使用，如下与Module模式集成"><a href="#Facade并非必须单独使用，如下与Module模式集成" class="headerlink" title="Facade并非必须单独使用，如下与Module模式集成"></a>Facade并非必须单独使用，如下与Module模式集成</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var module = (function()&#123;</div><div class="line">    var _private = &#123;</div><div class="line">        i: 5,</div><div class="line">        get: function()&#123;</div><div class="line">            console.log(this.i);</div><div class="line">        &#125;,</div><div class="line">        set: function( val )&#123;</div><div class="line">            this.i = val</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return &#123;</div><div class="line">        facade: function(args)&#123;</div><div class="line">            _private.set(args.val);</div><div class="line">            _private.get();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.facade(&#123;val:10&#125;);</div><div class="line"></div><div class="line">Module模式的实例包含很多已经定义的私有方法。然后使用Facade提供一个更简单的API来访问这些方法。</div></pre></td></tr></table></figure>
+<h4 id="有关Facade的要点"><a href="#有关Facade的要点" class="headerlink" title="有关Facade的要点"></a>有关Facade的要点</h4><p>Facade也有一些缺点，但值得注意的是性能。必须确定Facade提供的抽象是否包含隐形成本。要试着了解涉及的任何性能成本，并确认是否值得抽象。</p>
 
       
     </div>
@@ -369,6 +379,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/05/设计模式：Factory-工厂-模式/" rel="prev" title="设计模式：Factory(工厂)模式">
+                设计模式：Factory(工厂)模式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -459,7 +473,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -505,7 +519,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构型设计模式"><span class="nav-number">1.</span> <span class="nav-text">结构型设计模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Facade参考"><span class="nav-number">2.</span> <span class="nav-text">Facade参考</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Facade并非必须单独使用，如下与Module模式集成"><span class="nav-number">3.</span> <span class="nav-text">Facade并非必须单独使用，如下与Module模式集成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有关Facade的要点"><span class="nav-number">4.</span> <span class="nav-text">有关Facade的要点</span></a></li></ol></div>
             
           </div>
         </section>
