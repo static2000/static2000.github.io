@@ -266,6 +266,262 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/" itemprop="url">
+                  Observer(观察者)模式和Publish/Subscribe(发布/订阅)模式的区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T23:01:19+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Observer："><a href="#Observer：" class="headerlink" title="Observer："></a>Observer：</h3><pre><code>目标和观察者是基类，`目标`提供一个`维护观察者`列表的方法，观察者提供一个`更新方法`。
+具体目标和具体观察者分别继承各自的基类，然后`具体观察者`把自己`注册`到具体目标里，在`具体目标`发生变化时候会`调用`观察者列表里具体观察者的更新方法。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/22/Observer-观察者-模式和Publish-Subscribe-发布-订阅-模式的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/22/Lodash/" itemprop="url">
+                  Lodash
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T10:36:30+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/22/Lodash/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/22/Lodash/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>原文：<a href="http://pinggod.com/2016/Lodash/">Lodash</a></p>
+<h3 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h3><pre><code>* `Array`,适用于数组类型，比如填充数据、查找元素、数组分片等操作
+* `Collection`,适用于数组和对象类型，部分适用于字符串，比如分组、查找、过滤等操作
+* `Function`，适用于函数类型，比如节流、延迟、缓存、设置钩子等操作
+* `Lang`，普遍适用于各种类型，常用于执行类型判断和类型转换
+* `Math`，适用于数值类型，常用于执行数学运算
+* `Number`，适用于生成随机数，比较数值与数值区间的关系
+* `Object`，适用于对象类型，常用于对象的创建、扩展、类型转换、检索、集合等操作
+* `Seq`，常用于创建链式调用，提高执行性能（惰性计算）
+* `String`，适用于字符串类型
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/22/Lodash/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/20/设计模式：Observer（观察者）模式/" itemprop="url">
                   设计模式：Observer（观察者）模式
                 </a>
@@ -701,7 +957,8 @@
 
       
         
-          <h3 id="重命名本地分支："><a href="#重命名本地分支：" class="headerlink" title="重命名本地分支："></a>重命名本地分支：</h3><p>重命名本地分支其实就是先删除远端分支，然后再重命名本地分支，再重新提交一个远程分支<br>
+          <h3 id="删除本地分支："><a href="#删除本地分支：" class="headerlink" title="删除本地分支："></a>删除本地分支：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git br <span class="_">-d</span> target</div></pre></td></tr></table></figure>
+<h3 id="重命名本地分支："><a href="#重命名本地分支：" class="headerlink" title="重命名本地分支："></a>重命名本地分支：</h3><p>重命名本地分支其实就是先删除远端分支，然后再重命名本地分支，再重新提交一个远程分支<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/08/12/git常用命令整理/#more" rel="contents">
               阅读全文 &raquo;
@@ -778,7 +1035,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -786,7 +1043,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -795,7 +1052,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
